@@ -1,8 +1,8 @@
 public class Car {
     //attributes
-    String name;
-    String color;
-    int model;
+    private String name;
+    private String color;
+    private int model;
 
     //behaviour
     public String getName() {

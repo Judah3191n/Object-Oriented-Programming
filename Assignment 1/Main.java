@@ -46,7 +46,6 @@ public class Main {
         String nameSearch;
         String studentHashMapID;
         double studentGPA;
-        String studentID;
 
         // processes user input
         switch (userInput) {
@@ -161,7 +160,7 @@ public class Main {
                                     editStudentDetails = 0;
                                     break;
                                 default:
-                                    System.out.println("error - enter a number between 1 and 7");
+                                    System.out.println("error - enter a number between 1 and 6");
                             }
                         } while (editStudentDetails != 0);
                     }
@@ -199,7 +198,7 @@ public class Main {
                 break;
             default:
                 System.out.println("\u001B[2J");// clears screen
-                System.out.println("Error in input, plese enter a number between 1-4");
+                System.out.println("Error in input, plese enter a number between 1-5");
         }
 
         // Displays keys of students

@@ -1,0 +1,65 @@
+CLASS Customer
+    ATTRIBUTES:
+        customerID
+        name
+        Email
+        address
+	phone number
+    METHODS:
+        selectRestaurant()
+        browseMenu()
+        addToCart(foodItem)
+        placeOrder()
+        makePayment()
+        
+CLASS Restaurant
+    ATTRIBUTES:
+        restaurantID
+        name
+        location
+        menuItems
+    METHODS:
+        receiveOrder(order)
+        prepareOrder()
+	addMenuItem(FoodItem)
+	editMenuItem()
+	displayMenu()
+       
+
+CLASS FoodItem
+    ATTRIBUTES:
+        itemID
+        name
+        price
+        description
+    METHODS:
+        getDetails()
+
+CLASS Order
+    ATTRIBUTES:
+        orderID
+        customerID
+        OrderList<FoodItems>
+        totalPrice
+    METHODS:
+        calculateTotal()
+        confirmOrder()
+	removeOrder()
+	addOrder(FoodItem)
+
+FUNCTION placeOrder(customer, restaurant, selectedItems)
+    order = new Order()
+    order.customerID = customer.customerID
+    order.restaurantID = restaurant.restaurantID
+    order.orderItems = selectedItems
+    order.calculateTotal()
+
+    DISPLAY "Order Summary: ", order.details()
+
+    IF customer.makePayment(order.totalAmount) THEN
+        restaurant.receiveOrder(order)
+        DISPLAY "Order Placed Successfully!"
+    ELSE
+        DISPLAY "Payment Failed! Order Not Placed."
+
+END FUNCTION
